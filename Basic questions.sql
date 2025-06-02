@@ -109,3 +109,31 @@ WHERE o.pid IS NULL;
 
 select * from Product
 select * from Orders
+
+
+select * from EMP_Salary
+
+select * from EMP_Salary
+where salary<(select max(salary) from EMP_Salary where SALARY<(select max(salary) from EMP_Salary)
+
+--third highest salary dept wise
+select 
+	eid,
+	dept,
+	desi,
+	salary
+from emp_salary
+order by salary desc
+offset 2 rows
+fetch next 1 row only
+
+select eid, dept desi,rank() over (partition by dept order by salary desc) as rnk from EMP_Salary
+where rnk=3
+
+--how to add new column
+update EMP_Salary
+set column address varchar(75)
+
+
+--conceptual lerning in sql and powerbi
+--qery practice leetcode hackerank, w3school
