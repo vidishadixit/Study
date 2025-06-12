@@ -96,3 +96,12 @@ group by
 
 --Q6. Detect customers who never ordered again after their first order.
 
+-- Q7. Write an SQL query to find the total number of orders placed by each customer from the table.
+
+select
+	customer_id,
+	count(*) as totalNum
+from
+	orders
+group by
+	customer_id
