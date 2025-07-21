@@ -105,3 +105,11 @@ from
 	orders
 group by
 	customer_id
+
+select
+    min(len(city),
+    max(len(city))
+from
+    station
+order by
+        city asc;
